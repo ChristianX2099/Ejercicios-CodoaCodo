@@ -5,13 +5,12 @@
         public $Velocidad;
         public $Fuerza;
     
-    function hablar(){
-        echo "Hola, blablablabla";
+    function hablar($Nombre,$Tipo){
+        echo "Hola, Mi nombre es ". $Nombre." y soy ". $Tipo.". <br>";
     }
 
-    function abrazo(){
-        echo ' ';
-        echo "Un abrazo nunca viene mal";
+    function abrazo($Nombre){
+        echo "Ven aca tu amig@ ".$Nombre." te dara un abrazo!. <br>";
     }
 
     }
@@ -22,10 +21,11 @@ $Sonic->Nombre = "Sonic";
 $Sonic->Velocidad = 1000;
 $Sonic->Fuerza = 400;
 
-echo $Sonic->Nombre;
-echo $Sonic->Tipo;
-echo $Sonic->Velocidad;
-echo $Sonic->Fuerza;
+echo "<br>Nombre: " . $Sonic->Nombre . "<br>";
+echo "Tipo: " . $Sonic->Tipo . "<br>";
+echo "Velocidad: " . $Sonic->Velocidad . "<br>";
+echo "Fuerza: " . $Sonic->Fuerza . "<br>";
+$Sonic->hablar($Sonic->Nombre,$Sonic->Tipo);
 
 $Tails = new SonicFriends();
 $Tails->Tipo = "Ingeniero";
@@ -37,7 +37,7 @@ echo "<br>Nombre: " . $Tails->Nombre . "<br>";
 echo "Tipo: " . $Tails->Tipo . "<br>";
 echo "Velocidad: " . $Tails->Velocidad . "<br>";
 echo "Fuerza: " . $Tails->Fuerza . "<br>";
-$Tails->hablar();
+$Tails->abrazo($Tails->Nombre);
 
 $Knuckles = new SonicFriends();
 $Knuckles->Tipo = "Luchador";
@@ -49,6 +49,7 @@ echo "<br>Nombre: " . $Knuckles->Nombre . "<br>";
 echo "Tipo: " . $Knuckles->Tipo . "<br>";
 echo "Velocidad: " . $Knuckles->Velocidad . "<br>";
 echo "Fuerza: " . $Knuckles->Fuerza . "<br>";
+$Knuckles->hablar($Knuckles->Nombre,$Knuckles->Tipo);
 
 $Amy = new SonicFriends();
 $Amy->Tipo = "Martillero";
@@ -60,6 +61,7 @@ echo "<br>Nombre: " . $Amy->Nombre . "<br>";
 echo "Tipo: " . $Amy->Tipo . "<br>";
 echo "Velocidad: " . $Amy->Velocidad . "<br>";
 echo "Fuerza: " . $Amy->Fuerza . "<br>";
+$Amy->abrazo($Amy->Nombre);
 
 $Shadow = new SonicFriends();
 $Shadow->Tipo = "Anti-Héroe";
@@ -71,7 +73,5 @@ echo "<br>Nombre: " . $Shadow->Nombre . "<br>";
 echo "Tipo: " . $Shadow->Tipo . "<br>";
 echo "Velocidad: " . $Shadow->Velocidad . "<br>";
 echo "Fuerza: " . $Shadow->Fuerza . "<br>";
-
-?>
-
+$Shadow->hablar($Shadow->Nombre,$Shadow->Tipo);
 ?>
